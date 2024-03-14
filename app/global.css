@@ -1,0 +1,56 @@
+:root {
+  --text-color: #01457A;
+  --border-color: #01457A;
+
+  --foreground-color: #D8EFFF;
+
+  --main-shadow: 0px 0px 25px 0px rgba(142, 160, 173, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--text-color);
+  background: url("../public/assets/global-bg.svg") top left no-repeat,
+  linear-gradient(to bottom, transparent, var(--foreground-color)) no-repeat;
+  font-size: 24px;
+  line-height: 33px;
+
+  /*
+    Layout styles, usually, this approach is not used in body,
+    but since this is a small project, it is acceptable
+  */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 140px;
+  padding-bottom: 115px;
+}
+
+hr {
+  overflow: visible;
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+sup {
+  vertical-align: top;
+  position: relative;
+  top: -0.5em;
+  font-size: 60%;
+}

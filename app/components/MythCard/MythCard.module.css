@@ -1,0 +1,96 @@
+.card {
+  padding: 40px 29px 40px 38px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--main-shadow);
+  position: relative;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+}
+
+.card.opened {
+  display: block;
+  padding: 40px 38px;
+}
+
+.card.opened > p {
+  margin-bottom: 10px;
+}
+
+.open {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .1s all;
+}
+
+.card:nth-child(1n) .open {
+  background: rgba(1, 69, 122, 1);
+}
+
+.card:nth-child(2n) .open {
+  background: rgba(188, 215, 126, 1);
+}
+
+.open:active {
+  transform: scale(0.95);
+}
+
+.droplet {
+  padding: 18px;
+  height: 80px;
+  width: 80px;
+  flex: 0 0 80px;
+  border-radius: 0 50% 50% 50%;
+  background: linear-gradient(90deg, #FDD966 0%, #BCD77E 68.54%);
+}
+
+.border {
+  margin: 0 30px;
+
+  flex: 0 0 295px;
+  clip-path: polygon(calc(100% - 40px) 0, 100% 45%, calc(100% - 40px) 100%, 0 100%, 0 0);
+  background: linear-gradient(265.25deg, #01457A 0%, #43A7C7 43.23%, #BCD77E 74.48%, rgba(188, 215, 126, 0) 100%);
+}
+
+.notion {
+  padding: 6px 4px;
+  margin-left: -4px;
+  height: 100%;
+  width: 100%;
+  clip-path: inherit;
+  background-image: linear-gradient(to right, #fff, var(--foreground-color));
+  background-repeat: no-repeat;
+  background-size: 100% calc(100% - 3px);
+}
+
+.pretext {
+  flex-grow: 1;
+  min-width: 300px;
+  max-width: 770px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  position: relative;
+}
+
+.pretext::after {
+  pointer-events: none;
+  content: "";
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  height: 55px;
+  width: 100%;
+  background: linear-gradient(to bottom, transparent, #fff);
+}

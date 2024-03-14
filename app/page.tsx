@@ -1,95 +1,134 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import s from './page.module.css'
+import { MythCard } from '@/app/components/MythCard'
+import { DirectionCard } from '@/app/components/DirectionCard'
+import { User } from '@/app/assets/svg/User'
+import { Progress } from '@/app/assets/svg/Progress'
+import { DangerCard } from '@/app/components/DangerCard'
+import { Heart } from '@/app/assets/svg/Heart'
+import { AttackHeart } from '@/app/assets/svg/AttackHeart'
+import { Bubble } from '@/app/assets/svg/Bubble'
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className={s.main}>
+      <h2>ХОБЛ: мифы и реальность</h2>
+
+      <div className={s.content}>
+        <div className={s.container}>
+          <MythCard
+            icon={<User />}
+            notion={<>ХОБЛ болеют <b>преимущественно мужчины?</b></>}
+            pretext="В десятилетнем исследовании «Генетическая эпидемиология ХОБЛ» (COPDGene) среди пациентов с ХОБЛ,
+            диагностированной до 55 лет, было выявлено преобладание женщин (66%), а в возрасте 60-64 лет
+            количество женщин и мужчин."
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+            <p>В десятилетнем исследовании <b>«Генетическая эпидемиология ХОБЛ» (COPDGene)</b> среди пациентов с ХОБЛ,
+              диагностированной до 55 лет, было выявлено <b>преобладание женщин (66%)</b>, а в возрасте 60-64 лет
+              количество
+              женщин и мужчин.</p>
+
+            <p>
+              Такое эпидемиологическое распределение заболеваемости ХОБЛ может быть связано с тем, что дыхательные пути
+              курящих женщин имеют более <b>высокий процент площади стенок</b>, но меньшую площадь просвета, внутренний
+              диаметр
+              и толщину дыхательных путей по сравнению с курящими мужчинами.
+            </p>
+
+            <img
+              className={s.chartImage}
+              src="/assets/chart.png"
+              alt="Эпидемиологическое распределение ХОБЛ среди мужчин и женщин, %"
             />
-          </a>
+          </MythCard>
+          <MythCard
+            icon={<Progress />}
+            notion={<><b>Опасно</b> не наличие заболевания, а обострения?</>}
+            pretext="Большинство пациентов с ХОБЛ столкнется с обострениями: как минимум одно среднетяжелое или
+            тяжелое обострение случится в течение..."
+          >
+            <p><b>Большинство пациентов с ХОБЛ столкнется с обострениями: как минимум одно среднетяжелое или тяжелое
+              обострение случится в течение 3 лет у 77% пациентов<sup>1</sup>.</b></p>
+
+            <p>
+              В течение 5 лет после первого тяжёлого обострения в живых остаются только 40%
+              пациентов.<sup>2</sup> Прогноз после
+              обострений ХОБЛ схож с таковым при сердечной недостаточности, инфаркте миокарда и некоторых
+              злокачественных опухолях.
+            </p>
+
+            <h3 className={s.title}>Пятилетняя выживаемость пациентов</h3>
+
+            <div className={s.containerCards}>
+              <DangerCard
+                percentage={45.5}
+                icon={<Heart />}
+                title={<>пациентов с <b>сердечной недостаточностью<sup>1</sup></b></>}
+                subtitle="Популяционное когортное исследование (N=385)"
+              />
+              <DangerCard
+                percentage={55.3}
+                icon={<AttackHeart />}
+                title={<>пациентов с <b>инфарктом миокарда<sup>1</sup></b></>}
+                subtitle="Апостериорный анализ когортного исследования (N=2887)"
+              />
+              <DangerCard
+                percentage={50.5}
+                icon={<Bubble />}
+                title={<>пациентов с <b>раком мочевого пузыря</b></>}
+                subtitle="Исследование Национальной статистической службы (N=42642)"
+              />
+            </div>
+          </MythCard>
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <h2>Терапия ХОБЛ: что в фокусе?</h2>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      <div className={s.content}>
+        <div className={s.hint}>
+          <h3>Даже 1 среднетяжелое обострение — сигнал к увеличению объема терапии</h3>
+        </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+        <h3 className={s.trend}>Приоритетные направления фармакотерапевтической стратегии при ХОБЛ<sup>1</sup>:</h3>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+        <div className={s.advices}>
+          <DirectionCard index={1} title={<>Ингаляционный <b>антихолинергик</b></>}>
+            Ингибирует бронхоконстрикторные эффекты ацетилхолина, вступая с ним в конкурентный антагонизм за
+            взаимодействие с эффекторными мускариновыми рецепторами, дополняет и потенцирует эффект
+            β2-агонистов<sup>1</sup>
+          </DirectionCard>
+          <DirectionCard index={2} title={<>Ингаляционный <br /><b>β2-агонист</b></>}>
+            Вызывает бронходилатацию посредством релаксации гладкомышечных клеток бронхов независимо от характера
+            констриктивных стимулов, т. е. выступают в качестве функциональных антагонистов бронхоконстрикции
+          </DirectionCard>
+          <DirectionCard index={3} title={<>Ингаляционный <b>глюкокортикостероид</b> (ИГКС)</>}>
+            Снижает частоту обострений, особенно в сочетании с ДДБА, подавляют хроническое воспаление при астме и
+            снижают гиперреактивность дыхательных путей
+          </DirectionCard>
+        </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        <div className={s.arrows}>
+          <hr />
+          <hr />
+        </div>
+
+        <div className={s.advices}>
+          <div className={s.card}>
+            <p>Пациентам с ХОБЛ рекомендуется комбинирование бронходилататоров с разными механизмами действия;
+              Назначение 2-х бронходилататоров из группы длительнодействующих β2-агонистов (ДДБА) и длительнодействующих
+              антихолинергиков (ДДАХ), действие которых дополняет и усиливает друг друга<sup>1</sup>.</p>
+          </div>
+
+          <div className={s.card}>
+            <p>Пациентам с ХОБЛ и частыми обострениями (≥2 среднетяжелых обострений в течение 1 года/1 тяжелое
+              обострение, потребовавшее госпитализации) рекомендуется назначение ИГКС в дополнение к ДДБА;
+              Последние исследования показали, что амбулаторное применение ИГКС/ДДБА у пациентов с ХОБЛ снижает
+              госпитальную летальность по сравнению с пациентами, принимавшими только ДДБА (8,1% vs
+              13,2%)<sup>1</sup>.
+            </p>
+          </div>
+        </div>
       </div>
     </main>
-  );
+  )
 }

@@ -1,0 +1,32 @@
+.card {
+  background: rgba(253, 217, 102, 0.25);
+  padding: 30px 10px;
+  border-radius: 20px;
+  display: grid;
+  justify-items: center;
+  grid-gap: 15px;
+}
+
+.icon {
+  height: 140px;
+}
+
+.percentage {
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 131px;
+  text-align: center;
+}
+
+.title {
+  font-size: 26px;
+  line-height: 35px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+  text-align: center;
+}

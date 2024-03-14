@@ -1,0 +1,51 @@
+.card {
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--foreground-color)
+  );
+  border-radius: 20px;
+  box-shadow: var(--main-shadow);
+
+  padding: 30px 15px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.index {
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  width: 178px;
+  height: 145px;
+  background: url("../../../public/assets/inhaler.svg") no-repeat;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(90deg, #FDD966 0%, #BCD77E 68.54%);
+}
+
+.circle span {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 65px;
+}
+
+.title {
+  font-size: 28px;
+  line-height: 38px;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.text {
+  text-align: center;
+}
