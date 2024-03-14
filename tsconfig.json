@@ -25,12 +25,17 @@
       }
     ],
     "paths": {
+      "@/icons/*": [
+        "./public/assets/icons/*",
+        "./public/assets/*"
+      ],
       "@/*": [
         "./*"
       ]
     }
   },
   "include": [
+    "svgr.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

@@ -10,15 +10,6 @@
   align-items: flex-start;
 }
 
-.card.opened {
-  display: block;
-  padding: 40px 38px;
-}
-
-.card.opened > p {
-  margin-bottom: 10px;
-}
-
 .open {
   cursor: pointer;
   width: 48px;

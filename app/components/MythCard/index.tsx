@@ -1,38 +1,32 @@
 'use client'
 
-import s from './MythCard.module.css'
-import { useState, ReactNode, PropsWithChildren } from 'react'
-import { Hand } from '@/app/assets/svg/Hand'
-import { clsx } from 'clsx/lite'
+import { ReactNode } from 'react'
 
-type FaqCardProps = PropsWithChildren & {
+import HandIcon from '@/icons/hand.svg'
+import s from './MythCard.module.css'
+
+type FaqCardProps = {
   notion?: ReactNode
   icon?: ReactNode
   pretext?: string
+  openModal?: () => void
 }
 
-export const MythCard = ({ children, notion, icon, pretext }: FaqCardProps) => {
-
-  const [ isOpen, setIsOpen ] = useState<boolean>(false)
-
+export const MythCard = ({ notion, icon, pretext, openModal }: FaqCardProps) => {
   return (
-    <article className={clsx(s.card, isOpen && s.opened)}>
+    <article className={s.card}>
 
-      {!isOpen && <>
-        <div className={s.open} onClick={() => setIsOpen(true)}><Hand /></div>
+      <div className={s.open} onClick={openModal}><HandIcon /></div>
 
-        <div className={s.droplet}>{icon}</div>
+      <div className={s.droplet}>{icon}</div>
 
-        <div className={s.border}>
-          <div className={s.notion}>
-            <p>{notion}</p>
-          </div>
+      <div className={s.border}>
+        <div className={s.notion}>
+          <p>{notion}</p>
         </div>
+      </div>
 
-        <p className={s.pretext}>{pretext}</p>
-      </>}
-
-      {isOpen && children}
+      <p className={s.pretext}>{pretext}</p>
     </article>
   )
 }

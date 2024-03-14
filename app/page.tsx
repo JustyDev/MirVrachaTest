@@ -1,14 +1,20 @@
+'use client'
+
 import s from './page.module.css'
 import { MythCard } from '@/app/components/MythCard'
 import { DirectionCard } from '@/app/components/DirectionCard'
-import { User } from '@/app/assets/svg/User'
-import { Progress } from '@/app/assets/svg/Progress'
-import { DangerCard } from '@/app/components/DangerCard'
-import { Heart } from '@/app/assets/svg/Heart'
-import { AttackHeart } from '@/app/assets/svg/AttackHeart'
-import { Bubble } from '@/app/assets/svg/Bubble'
+
+import UserIcon from '@/icons/user.svg'
+import ProgressIcon from '@/icons/progress.svg'
+import { useUnit } from 'effector-react'
+import { openResearchModal } from '@/app/_modals/Research/model'
+import { openDangersModal } from '@/app/_modals/Dangers/model'
 
 export default function HomePage() {
+
+  const openResearch = useUnit(openResearchModal)
+  const openDangers = useUnit(openDangersModal)
+
   return (
     <main className={s.main}>
       <h2>ХОБЛ: мифы и реальность</h2>
@@ -16,69 +22,20 @@ export default function HomePage() {
       <div className={s.content}>
         <div className={s.container}>
           <MythCard
-            icon={<User />}
+            icon={<UserIcon />}
             notion={<>ХОБЛ болеют <b>преимущественно мужчины?</b></>}
             pretext="В десятилетнем исследовании «Генетическая эпидемиология ХОБЛ» (COPDGene) среди пациентов с ХОБЛ,
             диагностированной до 55 лет, было выявлено преобладание женщин (66%), а в возрасте 60-64 лет
             количество женщин и мужчин."
-          >
-            <p>В десятилетнем исследовании <b>«Генетическая эпидемиология ХОБЛ» (COPDGene)</b> среди пациентов с ХОБЛ,
-              диагностированной до 55 лет, было выявлено <b>преобладание женщин (66%)</b>, а в возрасте 60-64 лет
-              количество
-              женщин и мужчин.</p>
-
-            <p>
-              Такое эпидемиологическое распределение заболеваемости ХОБЛ может быть связано с тем, что дыхательные пути
-              курящих женщин имеют более <b>высокий процент площади стенок</b>, но меньшую площадь просвета, внутренний
-              диаметр
-              и толщину дыхательных путей по сравнению с курящими мужчинами.
-            </p>
-
-            <img
-              className={s.chartImage}
-              src="/assets/chart.png"
-              alt="Эпидемиологическое распределение ХОБЛ среди мужчин и женщин, %"
-            />
-          </MythCard>
+            openModal={openResearch}
+          />
           <MythCard
-            icon={<Progress />}
+            icon={<ProgressIcon />}
             notion={<><b>Опасно</b> не наличие заболевания, а обострения?</>}
             pretext="Большинство пациентов с ХОБЛ столкнется с обострениями: как минимум одно среднетяжелое или
             тяжелое обострение случится в течение..."
-          >
-            <p><b>Большинство пациентов с ХОБЛ столкнется с обострениями: как минимум одно среднетяжелое или тяжелое
-              обострение случится в течение 3 лет у 77% пациентов<sup>1</sup>.</b></p>
-
-            <p>
-              В течение 5 лет после первого тяжёлого обострения в живых остаются только 40%
-              пациентов.<sup>2</sup> Прогноз после
-              обострений ХОБЛ схож с таковым при сердечной недостаточности, инфаркте миокарда и некоторых
-              злокачественных опухолях.
-            </p>
-
-            <h3 className={s.title}>Пятилетняя выживаемость пациентов</h3>
-
-            <div className={s.containerCards}>
-              <DangerCard
-                percentage={45.5}
-                icon={<Heart />}
-                title={<>пациентов с <b>сердечной недостаточностью<sup>1</sup></b></>}
-                subtitle="Популяционное когортное исследование (N=385)"
-              />
-              <DangerCard
-                percentage={55.3}
-                icon={<AttackHeart />}
-                title={<>пациентов с <b>инфарктом миокарда<sup>1</sup></b></>}
-                subtitle="Апостериорный анализ когортного исследования (N=2887)"
-              />
-              <DangerCard
-                percentage={50.5}
-                icon={<Bubble />}
-                title={<>пациентов с <b>раком мочевого пузыря</b></>}
-                subtitle="Исследование Национальной статистической службы (N=42642)"
-              />
-            </div>
-          </MythCard>
+            openModal={openDangers}
+          />
         </div>
       </div>
 

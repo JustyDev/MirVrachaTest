@@ -15,7 +15,7 @@
 
   /*background-size: 100%;*/
   background-repeat: no-repeat;
-  background-image: url("../public/assets/header-bg.svg");
+  background-image: url("/assets/icons/header-bg.svg");
 }
 
 .content {
@@ -84,25 +84,7 @@
 
 .arrows hr::after {
   position: absolute;
-  content: url("../public/assets/arrow.svg");
+  content: url("/assets/icons/arrow.svg");
   bottom: -28px;
   left: calc(50% - 13px);
-}
-
-.chartImage {
-  width: 100%;
-  margin-top: 30px;
-}
-
-.title {
-  text-align: center;
-  margin: 40px 15px;
-  line-height: 41px;
-  font-size: 30px;
-}
-
-.containerCards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 54px;
 }

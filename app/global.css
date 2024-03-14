@@ -22,7 +22,7 @@ body {
 
 body {
   color: var(--text-color);
-  background: url("../public/assets/global-bg.svg") top left no-repeat,
+  background: url("/assets/icons/global-bg.svg") top left no-repeat,
   linear-gradient(to bottom, transparent, var(--foreground-color)) no-repeat;
   font-size: 24px;
   line-height: 33px;

@@ -1,0 +1,16 @@
+.modal p {
+  margin-bottom: 10px;
+}
+
+.title {
+  text-align: center;
+  margin: 40px 15px;
+  line-height: 41px;
+  font-size: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 54px;
+}

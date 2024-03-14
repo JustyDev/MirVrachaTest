@@ -19,7 +19,7 @@
   align-items: flex-end;
   width: 178px;
   height: 145px;
-  background: url("../../../public/assets/inhaler.svg") no-repeat;
+  background: url("/assets/icons/inhaler.svg") no-repeat;
 }
 
 .circle {
