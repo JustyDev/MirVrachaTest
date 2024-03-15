@@ -7,9 +7,11 @@ import { clsx } from 'clsx/lite'
 import { useKeyDown } from '@/app/lib/hooks/useKeyDown'
 import { useTransition, animated } from 'react-spring'
 
+import CloseIcon from '@/icons/close.svg'
+
 type ModalProps = PropsWithChildren & {
   isOpen: boolean
-  onClose: () => void
+  onClose?: () => void
   className?: string
 }
 
@@ -39,10 +41,13 @@ export const Modal = ({ isOpen, children, onClose, className }: ModalProps) => {
         className={s.block}
         style={styles}
       >
+        <div onClick={onClose} className={s.close}>
+          <CloseIcon />
+        </div>
         {children}
       </animated.div>
       {blackout((sts, it) => it && item && <animated.div
-        title='Нажмите, чтобы закрыть окно'
+        title="Нажмите, чтобы закрыть окно"
         style={sts}
         onClick={onClose}
         className={s.blackout}

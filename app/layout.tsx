@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
-import { Noto_Sans } from 'next/font/google'
+
 import './global.css'
 import { PropsWithChildren } from 'react'
 
 import { Research } from '@/app/_modals/Research'
 import { Dangers } from '@/app/_modals/Dangers'
+import { clsx } from 'clsx/lite'
 
-const NotoSans = Noto_Sans({ subsets: [ 'cyrillic' ] })
+import { NotoSans, CenturyGothic } from '@/app/lib/fonts'
 
 export const metadata: Metadata = {
   title: 'Тестовое задание - МирВрача',
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="ru">
-    <body className={NotoSans.className}>
+    <body className={clsx(NotoSans.className, CenturyGothic.variable)}>
 
     {children}
 

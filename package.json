@@ -1,7 +1,7 @@
 {
   "name": "test-app-mir-vracha",
   "version": "0.1.1",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",

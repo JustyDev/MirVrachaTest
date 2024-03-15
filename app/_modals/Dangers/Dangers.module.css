@@ -11,6 +11,18 @@
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 54px;
+}
+
+@media screen and (max-width: 420px) {
+  .title {
+    margin: 20px 10px;
+    line-height: 30px;
+    font-size: 22px;
+  }
+
+  .cards {
+    grid-gap: 20px;
+  }
 }

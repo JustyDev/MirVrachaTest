@@ -49,3 +49,20 @@
 .text {
   text-align: center;
 }
+
+@media screen and (max-width: 420px) {
+  .circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .circle span {
+    font-size: 42px;
+    line-height: 42px;
+  }
+
+  .index {
+    width: 150px;
+    height: 130px;
+  }
+}

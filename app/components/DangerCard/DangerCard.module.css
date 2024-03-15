@@ -30,3 +30,16 @@
   line-height: 25px;
   text-align: center;
 }
+
+@media screen and (max-width: 420px) {
+  .card {
+    padding: 20px 15px;
+    border-radius: 15px;
+    grid-gap: 10px;
+  }
+
+  .percentage {
+    line-height: 85px;
+    font-size: 80px;
+  }
+}

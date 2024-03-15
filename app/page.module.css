@@ -7,13 +7,13 @@
 }
 
 .main h2 {
+  font-family: var(--font-century-gothic);
   padding: 18px 45px;
   font-weight: 700;
   font-size: 40px;
   line-height: 50px;
   height: 110px;
 
-  /*background-size: 100%;*/
   background-repeat: no-repeat;
   background-image: url("/assets/icons/header-bg.svg");
 }
@@ -36,7 +36,7 @@
 
 .advices {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   grid-gap: 30px;
 }
 
@@ -87,4 +87,66 @@
   content: url("/assets/icons/arrow.svg");
   bottom: -28px;
   left: calc(50% - 13px);
+}
+
+@media screen and (max-width: 1200px) {
+  .arrows hr {
+    height: 20px;
+    margin: 4px 15px 10px;
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .content {
+    padding: 25px 25px 55px;
+  }
+
+  .main h2 {
+    height: auto;
+    padding: 18px 45px;
+    font-size: 35px;
+  }
+
+  .hint h3 {
+    font-size: 24px;
+  }
+
+  .trend {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .main h2 {
+    line-height: 38px;
+    height: auto;
+    padding: 10px 17px;
+    font-size: 30px;
+  }
+
+  .main {
+    margin: 0 10px;
+  }
+
+  .content {
+    padding: 15px 15px 30px;
+  }
+
+  .container {
+    grid-gap: 20px;
+  }
+
+  .hint h3 {
+    font-size: 20px;
+  }
+
+  .trend {
+    padding: 20px 10px 30px;
+    font-size: 18px;
+  }
+
+  .card {
+    padding: 15px 17px;
+  }
 }

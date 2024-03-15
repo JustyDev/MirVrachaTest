@@ -11,6 +11,7 @@
 }
 
 .open {
+  padding: 10px;
   cursor: pointer;
   width: 48px;
   height: 48px;
@@ -66,7 +67,7 @@
 
 .pretext {
   flex-grow: 1;
-  min-width: 300px;
+  min-width: 250px;
   max-width: 770px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -84,4 +85,53 @@
   height: 55px;
   width: 100%;
   background: linear-gradient(to bottom, transparent, #fff);
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    flex-flow: row wrap;
+  }
+
+  .border {
+    flex: 0 0 auto;
+    max-width: calc(100% - 140px);
+  }
+
+  .notion {
+    padding: 6px 20px 10px 4px;
+  }
+
+  .pretext {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .card {
+    padding: 15px;
+  }
+
+  .droplet {
+    padding: 10px;
+    height: 60px;
+    width: 60px;
+    flex: 0 0 60px;
+  }
+
+  .border {
+    margin: 0 0 0 15px;
+    max-width: calc(100% - 75px);
+  }
+
+  .pretext {
+    margin-top: 10px;
+  }
+
+  .open {
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    top: -15px;
+    right: -10px;
+  }
 }

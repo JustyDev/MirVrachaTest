@@ -14,8 +14,10 @@
 }
 
 .block {
+  max-height: calc(100% - 60px);
+  overflow: auto;
   margin: 30px;
-  width: 1290px;
+  max-width: 1290px;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: var(--main-shadow);
@@ -25,13 +27,40 @@
   padding: 40px 38px;
 }
 
+.close {
+  margin-bottom: 15px;
+  color: #8e99a6;
+  width: 40px;
+  height: 40px;
+  display: none;
+  position: sticky;
+  content: none;
+  top: 0;
+  margin-left: auto;
+}
+
 .blackout {
   height: 100%;
   width: 100%;
   position: absolute;
   z-index: 0;
-  background-color: rgba(0, 0, 5, .4);
+  background-color: rgba(0, 0, 5, .2);
   cursor: pointer;
   user-select: none;
   backdrop-filter: blur(5px);
+}
+
+@media screen and (max-width: 420px) {
+  .block {
+    padding: 20px;
+    height: 100vh;
+    max-height: 100%;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .close {
+    display: block;
+  }
 }
